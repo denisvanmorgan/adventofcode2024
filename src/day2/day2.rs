@@ -13,7 +13,7 @@ pub fn solve() -> () {
 }
 
 fn part1(lines: &Vec<Result<String>>) -> () {
-    let mut safe_occurences: u32 = 0;
+    let mut safe_occurrences: u32 = 0;
 
     for line in lines {
         let parts = get_parts(line);
@@ -22,10 +22,10 @@ fn part1(lines: &Vec<Result<String>>) -> () {
             continue;
         }
 
-        safe_occurences += 1;
+        safe_occurrences += 1;
     }
 
-    println!("Day 2 - part 1: {}", safe_occurences);
+    println!("Day 2 - part 1: {}", safe_occurrences);
 }
 
 fn part2(lines: &Vec<Result<String>>) -> () {
@@ -57,7 +57,7 @@ fn part2(lines: &Vec<Result<String>>) -> () {
 }
 
 fn is_safe(parts: &Vec<i32>) -> bool {
-    let mut safe_occurences: u32 = 0;
+    let mut safe_occurrences: u32 = 0;
     let len = parts.len();
     let mut direction_change: bool = false;
 
@@ -82,11 +82,11 @@ fn is_safe(parts: &Vec<i32>) -> bool {
         }
 
         if n == len - 2 {
-            safe_occurences += 1;
+            safe_occurrences += 1;
         }
     }
 
-    safe_occurences == 1
+    safe_occurrences == 1
 }
 
 fn get_parts(line: &Result<String>) -> Vec<i32> {
