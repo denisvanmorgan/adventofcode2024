@@ -53,7 +53,7 @@ fn part2(lines: &Vec<Result<String>>) -> () {
         buffer.push(target * (occurences as i32));
     }
 
-    println!("Day 1 - part 1: {}", buffer.iter().sum::<i32>());
+    println!("Day 1 - part 2: {}", buffer.iter().sum::<i32>());
 }
 
 fn fill_buffers(lines: &Vec<Result<String>>, left: &mut Vec<i32>, right: &mut Vec<i32>) -> () {
