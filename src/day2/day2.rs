@@ -29,13 +29,13 @@ fn part1(lines: &Vec<Result<String>>) -> () {
 }
 
 fn part2(lines: &Vec<Result<String>>) -> () {
-    let mut safe_occurences: u32 = 0;
+    let mut safe_occurrences: u32 = 0;
 
     for line in lines {
         let parts = get_parts(line);
 
         if is_safe(&parts) {
-            safe_occurences += 1;
+            safe_occurrences += 1;
             continue;
         }
 
@@ -45,7 +45,7 @@ fn part2(lines: &Vec<Result<String>>) -> () {
             parts_copy.remove(n);
 
             if is_safe(&parts_copy) {
-                safe_occurences += 1;
+                safe_occurrences += 1;
                 break;
             }
 
@@ -53,7 +53,7 @@ fn part2(lines: &Vec<Result<String>>) -> () {
         }
     }
 
-    println!("Day 2 - part 2: {}", safe_occurences);
+    println!("Day 2 - part 2: {}", safe_occurrences);
 }
 
 fn is_safe(parts: &Vec<i32>) -> bool {
