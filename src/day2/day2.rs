@@ -16,11 +16,7 @@ fn part1(lines: &Vec<Result<String>>) -> () {
     let mut safe_occurences: u32 = 0;
 
     for line in lines {
-        let parts: Vec<i32> = line
-            .as_ref().unwrap()
-            .split_whitespace()
-            .map(|s| s.parse::<i32>().unwrap())
-            .collect();
+        let parts = get_parts(line);
 
         if !is_safe(&parts) {
             continue;
@@ -36,11 +32,7 @@ fn part2(lines: &Vec<Result<String>>) -> () {
     let mut safe_occurences: u32 = 0;
 
     for line in lines {
-        let parts: Vec<i32> = line
-            .as_ref().unwrap()
-            .split_whitespace()
-            .map(|s| s.parse::<i32>().unwrap())
-            .collect();
+        let parts = get_parts(line);
 
         if is_safe(&parts) {
             safe_occurences += 1;
@@ -95,4 +87,12 @@ fn is_safe(parts: &Vec<i32>) -> bool {
     }
 
     safe_occurences == 1
+}
+
+fn get_parts(line: &Result<String>) -> Vec<i32> {
+     line
+        .as_ref().unwrap()
+        .split_whitespace()
+        .map(|s| s.parse::<i32>().unwrap())
+        .collect()
 }
