@@ -58,7 +58,7 @@ fn part2(lines: &Vec<Result<String>>) -> () {
         }
     }
 
-    println!("Day 3 - part 1: {}", result);
+    println!("Day 3 - part 2: {}", result);
 }
 
 fn get_result(sequence: &str) -> u32 {
