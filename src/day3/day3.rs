@@ -26,15 +26,14 @@ fn part1(lines: &Vec<Result<String>>) -> () {
 fn part2(lines: &Vec<Result<String>>) -> () {
     let mut result: u32 = 0;
     let mut input: String = "".to_string();
-    let mut process: bool = true;
     let mut collect: bool = true;
 
     for line in lines {
         input.push_str(&line.as_ref().unwrap().to_string());
     }
 
-    while process {
-        if (collect) {
+    loop {
+        if collect {
             if let Some(pos) = input.find("don't()") {
                 let before = &input[..pos];
                 let after = &input[pos..];
